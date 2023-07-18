@@ -3,7 +3,5 @@
 
 int _putchar3(char letter)
 {
-write(1, &letter, 1);
-char n = '\n';
-return 0;
+return (write(1, &letter, 1));
 }
