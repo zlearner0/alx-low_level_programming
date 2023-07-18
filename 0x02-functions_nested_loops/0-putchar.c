@@ -18,7 +18,6 @@ char s = text[i];
 _putchar(s);
 i++;
 }
-char n = '\n';
-_putchar(n);
+_putchar('\n');
 return (0);
 }
