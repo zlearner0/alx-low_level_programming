@@ -2,7 +2,7 @@
 #define MAIN_H
 
 
-int _putchar3(char letter);
+int _putchar(char letter);
 
 
 #endif
