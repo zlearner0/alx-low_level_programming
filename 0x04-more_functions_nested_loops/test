@@ -1,10 +1,14 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * prime_factor - print largest prime factor of an input
+ * main - Utilizing main function to do the code
+ *
+ * Descripion: Using printf for the output
+ *
+ * Return: Zero as the output is printed text
 */
 
-void prime_factor(void)
+int main(void)
 {
 long long int prime;
 prime = 612852475143;
@@ -23,4 +27,5 @@ i++;
 }
 }
 printf("%llu\n", prime);
+return (0);
 }
