@@ -35,8 +35,6 @@ power /= 10;
 _putchar((n / power) % 10 + 48);
 }
 if (n == 0)
-{
 _putchar(48);
-}
 _putchar('\n');
 }
