@@ -10,7 +10,7 @@
 
 int main(void)
 {
-int prime;
+long long int prime;
 prime = 1231952;
 int i;
 i = 2;
