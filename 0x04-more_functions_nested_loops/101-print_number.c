@@ -5,7 +5,7 @@
 */
 void print_number(int n)
 {
-int i, count, m, power, count2, z;
+int count, m, power, count2, z;
 count = 0;
 m = n;
 power = 10;
