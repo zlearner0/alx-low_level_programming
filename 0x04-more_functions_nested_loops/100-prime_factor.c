@@ -26,6 +26,6 @@ else
 i++;
 }
 }
-printf("%llu\n", prime);
+printf("%llu", prime);
 return (0);
 }
