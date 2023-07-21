@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 /**
  * main - Utilizing main function to do the code
  *
@@ -10,9 +9,10 @@
 
 int main(void)
 {
-long long int prime;
+
+long int prime;
+long int i;
 prime = 612852475143;
-long long int i;
 i = 2;
 while (i <= prime)
 {
@@ -26,6 +26,8 @@ else
 i++;
 }
 }
-printf("%llu\n", prime);
+printf("%lu\n", prime);
+
+
 return (0);
 }
