@@ -8,15 +8,18 @@
 
 void puts2(char *str)
 {
-int len;
-int i;
-i = 0;
-len = _strlen(str);
+int i = 0;
+int len = 0;
+char *start = str;
+while (*str++)
+{
+len++;
+}
+str = start;
 while (i < len)
 {
-write(1, str, 1);
-str = str + 2;
-i = i + 2;
+write(1, str + i, 1);
+i += 2;
 }
 write(1, "\n", 1);
 }
