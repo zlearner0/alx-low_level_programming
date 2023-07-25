@@ -10,7 +10,7 @@
 int main(void)
 {
 int n;
-srand(8745269722257);
+srand(874257);
 n = rand();
 printf("%d\n", n);
 return (0);
