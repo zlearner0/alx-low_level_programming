@@ -8,13 +8,13 @@
 void puts_half(char *str)
 {
 int len = 0;
+int i;
 char *start = str;
 while (*str++)
 {
 len++;
 }
 str = start;
-int i;
 if (len % 2 == 0)
 {
 i = len / 2;
