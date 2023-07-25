@@ -1,6 +1,4 @@
 #include "main.h"
-#include <unistd.h>
-
 /**
 * rev_string - prints a reversed copy of a string letters
 * @s: pointer to string array
@@ -8,13 +6,20 @@
 
 void rev_string(char *s)
 {
-int len;
-len = _strlen(s);
-s = s + len - 1;
-while (*s)
+char *start = s;
+char rev;
+int i = 0;
+int len = 0;
+while (*s++)
 {
-write(1, s, 1);
-s--;
+len++;
 }
-write(1, "\n", 1);
+s = start;
+while (i < len / 2)
+{
+rev = s[i];
+s[i] = s[len - i - 1];
+s[len - i - 1] = rev;
+i++;
+}
 }
