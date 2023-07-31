@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
  * _strpbrk - scan 2 strings and gives the start of a string from the common
