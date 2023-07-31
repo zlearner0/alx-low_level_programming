@@ -8,13 +8,15 @@
 */
 char *_strpbrk(char *s, char *accept)
 {
-while (*s != '\0')
+for (; *s; s++)
 {
-if (_strchr(accept, *s) != '\0')
+for (char *p = accept; *p; p++)
 {
-break;
-}
-s++;
-}
+if (*s == *p)
+{
 return (s);
+}
+}
+}
+return ('\0');
 }
