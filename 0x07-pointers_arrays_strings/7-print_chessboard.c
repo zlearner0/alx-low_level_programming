@@ -12,7 +12,7 @@ for (i = 0; i < 8; i++)
 {
 for (j = 0; j < 8; j++)
 {
-char *c = a[i][j];
+char c = a[i][j];
 _putchar(c);
 }
 _putchar('\n');
