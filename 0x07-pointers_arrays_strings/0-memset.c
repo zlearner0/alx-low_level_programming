@@ -7,11 +7,15 @@
  * @n: the numbers of repatation for character b
  * Return: pointer to string array
 */
+
 char *_memset(char *s, char b, unsigned int n)
 {
-for (unsigned int i = 0; i < n; i++)
+char *p = s;
+while (n--)
 {
-*(s + i) = b;
+*p = b;
+p++;
 }
+*p = '\0';
 return (s);
 }
