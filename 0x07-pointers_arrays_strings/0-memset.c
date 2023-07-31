@@ -20,3 +20,4 @@ p++;
 *p = '\0';
 return (s);
 }
+_putchar('\n');
