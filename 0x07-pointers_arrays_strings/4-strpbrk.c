@@ -9,15 +9,18 @@
 */
 char *_strpbrk(char *s, char *accept)
 {
-for (; *s; s++)
+while (*s)
 {
-for (char *p = accept; *p; p++)
+char *a = accept;
+while (*a)
 {
-if (*s == *p)
+if (*s == *a)
 {
 return (s);
 }
+a++;
 }
+s++;
 }
-return (NULL);
+return ('\0');
 }
