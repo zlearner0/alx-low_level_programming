@@ -10,10 +10,6 @@ void _puts_recursion(char *s)
 char *p = s;
 _putchar(*p);
 p++;
-if (*p == '\0')
-{
-_putchar('\n');
-}
 if (*p != '\0')
 {
 _puts_recursion(p);
