@@ -14,12 +14,12 @@ if (argc == 3)
 {
 mult = atoi(argv[1]) * atoi(argv[2]);
 printf("%d\n", mult);
-return (0);
 }
 else
 {
 printf("error\n");
 return (1);
 }
+return (0);
 }
 
