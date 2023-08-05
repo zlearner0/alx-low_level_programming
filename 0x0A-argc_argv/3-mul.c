@@ -20,7 +20,10 @@ mult *= atoi(argv[i]);
 printf("%i\n", mult);
 }
 else
+{
 printf("error\n");
+return (1);
+}
 return (0);
 }
 
