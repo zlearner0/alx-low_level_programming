@@ -18,12 +18,12 @@ for (i = 1; i < argc ; i++)
 mult *= atoi(argv[i]);
 }
 printf("%i\n", mult);
+return (0);
 }
 else
 {
 printf("error\n");
 return (1);
 }
-return (0);
 }
 
