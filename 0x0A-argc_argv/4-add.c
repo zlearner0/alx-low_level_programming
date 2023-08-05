@@ -16,9 +16,10 @@ printf("0\n");
 return (0);
 }
 int sum = 0;
-for (int i = 1; i < argc; i++)
+int i, j;
+for (i = 1; i < argc; i++)
 {
-for (int j = 0; argv[i][j] != '\0'; j++)
+for (j = 0; argv[i][j] != '\0'; j++)
 {
 if (!isdigit(argv[i][j]))
 {
