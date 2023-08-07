@@ -104,9 +104,9 @@ return (length);
 char *copy_word(char *str, int length)
 {
 char *word = (char *)malloc((length + 1) * sizeof(char));
+int i;
 if (word == NULL)
 return (NULL);
-int i;
 for (i = 0; i < length; i++)
 word[i] = str[i];
 word[length] = '\0';
