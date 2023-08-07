@@ -11,9 +11,10 @@ char *argstostr(int ac, char **av)
 {
 int i, j, k;
 char *str;
+int total_length = 0;
 if (ac == 0 || av == NULL)
 return (NULL);
-int total_length = 0;
+
 for (i = 0; i < ac; i++)
 {
 for (j = 0; av[i][j] != '\0'; j++)
