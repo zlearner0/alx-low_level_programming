@@ -24,21 +24,21 @@ return (len1);
  * @str: the pointer to string to be duplicted
  * Return: pointer to the new string duplicated
 */
-
 char *_strdup(char *str)
 {
-char *p, *ptr;
 if (str == NULL)
 return (NULL);
-p = (char *)malloc(_len(str) * sizeof(char));
-if (p == NULL)
+int length = _len(str);
+char *duplicate = (char *)malloc((length + 1) * sizeof(char));
+if (duplicate == NULL)
 return (NULL);
-ptr = p;
-while (*str != '\0')
-{
-*p++ = *str++;
+char *src = str;
+char *dest = duplicate;
+while (*src != '\0')
+{*dest = *src;
+src++;
+dest++;
 }
-*p = '\0';
-return (ptr);
-_putchar('\n');
+*dest = '\0';
+return (duplicate);
 }
