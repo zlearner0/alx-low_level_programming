@@ -14,60 +14,54 @@ char *copy_word(char *str, int length);
  */
 char **strtow(char *str)
 {
-    if (str == NULL || *str == '\0')
-        return NULL;
-
-    int num_words = count_words(str);
-    if (num_words == 0)
-        return NULL;
-
-    char **words = (char **)malloc((num_words + 1) * sizeof(char *));
-    if (words == NULL)
-        return NULL;
-
-    int word_index = 0;
-    int word_length = 0;
-    int i;
-
-    for (i = 0; str[i] != '\0'; i++)
-    {
-        if (str[i] != ' ')
-        {
-            if (word_length == 0)
-                word_index = i;
-            word_length++;
-        }
-        else if (word_length != 0)
-        {
-            words[word_index] = copy_word(&str[word_index], word_length);
-            if (words[word_index] == NULL)
-            {
-                for (i = 0; i < word_index; i++)
-                    free(words[i]);
-                free(words);
-                return NULL;
-            }
-            word_length = 0;
-            word_index++;
-        }
-    }
-
-    if (word_length != 0)
-    {
-        words[word_index] = copy_word(&str[word_index], word_length);
-        if (words[word_index] == NULL)
-        {
-            for (i = 0; i <= word_index; i++)
-                free(words[i]);
-            free(words);
-            return NULL;
-        }
-        word_index++;
-    }
-
-    words[word_index] = NULL;
-
-    return words;
+int num_words, word_index, word_length, i;
+char **words;
+if (str == NULL || *str == '\0')
+return (NULL);
+num_words = count_words(str);
+if (num_words == 0)
+return (NULL);
+words = (char **)malloc((num_words + 1) * sizeof(char *));
+if (words == NULL)
+return (NULL);
+word_index = 0;
+word_length = 0;
+for (i = 0; str[i] != '\0'; i++)
+{
+if (str[i] != ' ')
+{
+if (word_length == 0)
+word_index = i;
+word_length++;
+}
+else if (word_length != 0)
+{
+words[word_index] = copy_word(&str[word_index], word_length);
+if (words[word_index] == NULL)
+{
+for (i = 0; i < word_index; i++)
+free(words[i]);
+free(words);
+return (NULL);
+}
+word_length = 0;
+word_index++;
+}
+}
+if (word_length != 0)
+{
+words[word_index] = copy_word(&str[word_index], word_length);
+if (words[word_index] == NULL)
+{
+for (i = 0; i <= word_index; i++)
+free(words[i]);
+free(words);
+return (NULL);
+}
+word_index++;
+}
+words[word_index] = NULL;
+return (words);
 }
 
 /**
@@ -77,16 +71,14 @@ char **strtow(char *str)
  */
 int count_words(char *str)
 {
-    int count = 0;
-    int i;
-
-    for (i = 0; str[i] != '\0'; i++)
-    {
-        if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
-            count++;
-    }
-
-    return count;
+int count = 0;
+int i;
+for (i = 0; str[i] != '\0'; i++)
+{
+if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+count++;
+}
+return (count);
 }
 
 /**
@@ -96,13 +88,11 @@ int count_words(char *str)
  */
 int word_length(char *str)
 {
-    int length = 0;
-    int i;
-
-    for (i = 0; str[i] != ' ' && str[i] != '\0'; i++)
-        length++;
-
-    return length;
+int length = 0;
+int i;
+for (i = 0; str[i] != ' ' && str[i] != '\0'; i++)
+length++;
+return (length);
 }
 
 /**
@@ -113,14 +103,12 @@ int word_length(char *str)
  */
 char *copy_word(char *str, int length)
 {
-    char *word = (char *)malloc((length + 1) * sizeof(char));
-    if (word == NULL)
-        return NULL;
-
-    int i;
-    for (i = 0; i < length; i++)
-        word[i] = str[i];
-    word[length] = '\0';
-
-    return word;
+char *word = (char *)malloc((length + 1) * sizeof(char));
+if (word == NULL)
+return (NULL);
+int i;
+for (i = 0; i < length; i++)
+word[i] = str[i];
+word[length] = '\0';
+return (word);
 }
