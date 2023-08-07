@@ -40,4 +40,5 @@ while (*str != '\0')
 }
 *p = '\0';
 return (ptr);
+_putchar('\n');
 }
