@@ -9,14 +9,18 @@
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
+void *ptr;
+unsigned int totalSize;
+unsigned char *bytePtr;
 unsigned int i;
-void *p;
 if (nmemb == 0 || size == 0)
 return (NULL);
-p = malloc(size * nmemb);
-if (p == NULL)
+totalSize = nmemb * size;
+ptr = malloc(totalSize);
+if (ptr == NULL)
 return (NULL);
-for (i = 0; i < nmemb; i++)
-*((char *)p + i) = 0;
-return (p);
+bytePtr = (unsigned char *)ptr;
+for (i = 0; i < totalSize; i++)
+bytePtr[i] = 0;
+return (ptr);
 }
