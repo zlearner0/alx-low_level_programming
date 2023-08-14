@@ -1,6 +1,6 @@
 #ifndef _SUM_H
 #define _SUM_H
 
-#define SUM(x,y) ((x) + (y))
+#define SUM(x, y) ((x) + (y))
 
-#endif /* macro to sum two numbers */
+#endif /* _SUM_H to sum two numbers */
