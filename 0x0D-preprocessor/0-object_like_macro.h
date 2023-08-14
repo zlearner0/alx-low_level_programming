@@ -1,5 +1,5 @@
-#ifndef _OBJECT_LINK_MACRO_H
-#define _OBJECT_LINK_MACRO_H
+#ifndef _OBJECT_LIKE_MACRO_H
+#define _OBJECT_LIKE_MACRO_H
 
 #define size 1024
 
