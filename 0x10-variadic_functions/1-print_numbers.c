@@ -25,7 +25,7 @@ separator = "";
 for (i = 0; i < n; i++)
 {
 num = va_arg(args, int);
-printf("%u%s", num, i == n - 1 ? "\n" : separator);
+printf("%i%s", num, i == n - 1 ? "\n" : separator);
 }
 va_end(args);
 }
