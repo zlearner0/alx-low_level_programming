@@ -20,7 +20,7 @@ separator = "";
 for (i = 0; i < n; i++)
 {
 s = va_arg(args, char *);
-printf("%s%s", (*s != '\0') ? s : "(nil)", i == n - 1 ? "\n" : separator);
+printf("%s%s", (s) ? s : "(nil)", i == n - 1 ? "\n" : separator);
 }
 va_end(args);
 }
