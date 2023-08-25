@@ -8,6 +8,6 @@ void _constructor(void)__attribute__((constructor));
 
 void _constructor(void)
 {
-printf("(A tortoise, having pretty good sense of a hare's nature");
-printf(", challenges one to a race.)\n");
+printf("(You're beat! and yet, you must allow,\n");
+printf("I bore my house upon my back!\n");
 }
