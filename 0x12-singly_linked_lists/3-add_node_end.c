@@ -3,6 +3,26 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
+
+/**
+ * _strlen2 - calculates string length
+ * @str: the input string
+ * Return: string length
+*/
+int _strlen2(const char *str)
+{
+int i;
+if (!str)
+return (0);
+for (i = 0; str[i] != '\0'; i++)
+;
+return (i);
+}
+
+
+
+
+
 /**
  * add_node_end - add a node to single linked list
  * @head: pointer to list of struct data type
@@ -24,7 +44,7 @@ if (!new->str)
 free(new);
 return (0);
 }
-new->len = _strlen(str);
+new->len = _strlen2(str);
 }
 new->next = NULL;
 if (tmp)
