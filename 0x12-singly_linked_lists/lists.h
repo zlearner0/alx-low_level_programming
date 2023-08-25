@@ -25,7 +25,7 @@ void free_list(list_t *head);
 int _strlen(const char *str);
 int _strlen2(const char *str);
 
-void _constructor(void)__attribute__((constructor));
+void _starter(void)__attribute__((constructor));
 
 
 #endif
