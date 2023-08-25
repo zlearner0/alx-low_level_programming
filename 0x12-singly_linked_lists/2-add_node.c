@@ -35,9 +35,14 @@ return (NULL);
 if (str)
 {
 new->str = strdup(str);
+if (!new->str)
+{
+free(new);
+return (0);
+}
 new->len = _strlen(str);
 }
 new->next = *head;
 *head = new;
-return (new->next);
+return (new);
 }
