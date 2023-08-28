@@ -15,6 +15,8 @@ if (!new)
 return (NULL);
 }
 new->n = n;
+if(!new->n)
+return (0);
 new->next = *head;
 *head = new;
 return (new);
