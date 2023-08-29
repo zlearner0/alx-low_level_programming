@@ -55,7 +55,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
 unsigned int nodes_num;
 listint_t *target, *before_target, *starter;
-unsigned int count = 0;
 starter = *head;
 nodes_num = node_count(starter);
 if (!*head || !head)
