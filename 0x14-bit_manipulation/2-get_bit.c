@@ -2,10 +2,10 @@
 #include <stdio.h>
 
 /**
- * get_bit - Returns the value of a bit at a given index.
- * @n: The number to get the bit from.
- * @index: The index, starting from 0 of the bit to get.
- * Return: The value of the bit at index index or -1 if an error occurs.
+ * get_bit - the bit correspoindig to index
+ * @n: integer to adjust
+ * @index: the counter
+ * Return: 1 for success
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
