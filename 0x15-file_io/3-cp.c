@@ -8,13 +8,13 @@
 #define BUFFER_SIZE 1024
 #define perm (S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH)
 /**
- * print_error_and_exit - print message error
+ * error_msg - print message error
  * @msg: error message
  * @f: the required name of file
  * @exit_code: the no. of error
  * Return: nothing
  */
-void print_error_and_exit(const char *msg, const char *f, int exit_code)
+void error_msg(const char *msg, const char *f, int exit_code)
 {
 dprintf(STDERR_FILENO, msg, f);
 dprintf(STDERR_FILENO, "\n");
@@ -32,35 +32,35 @@ int ffrom, fto, rd, wr;
 char buffer[BUFFER_SIZE];
 if (argc != 3)
 {
-print_error_and_exit("Usage: cp file_from file_to", "", 97);
+error_msg("Usage: cp file_from file_to", "", 97);
 }
 ffrom = open(argv[1], O_RDONLY);
 if (ffrom == -1)
 {
-print_error_and_exit("Error: Can't read from file %s", argv[1], 98);
+error_msg("Error: Can't read from file %s", argv[1], 98);
 }
 fto = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, perm);
 if (fto == -1)
 {
-print_error_and_exit("Error: Can't write to %s", argv[2], 99);
+error_msg("Error: Can't write to %s", argv[2], 99);
 }
 while ((rd = read(ffrom, buffer, BUFFER_SIZE)) > 0)
 {
 wr = write(fto, buffer, rd);
 if (wr == -1)
 {
-print_error_and_exit("Error: Can't write to %s", argv[2], 99);
+error_msg("Error: Can't write to %s", argv[2], 99);
 }
 }
 if (rd == -1)
 {
-print_error_and_exit("Error: Can't read from file %s", argv[1], 98);
+error_msg("Error: Can't read from file %s", argv[1], 98);
 }
 if (close(ffrom) == -1)
-print_error_and_exit("Error: Can't close fd %d", argv[1], 100);
+error_msg("Error: Can't close fd %d", argv[1], 100);
 if (close(fto) == -1)
 {
-print_error_and_exit("Error: Can't close fd %d", argv[2], 100);
+error_msg("Error: Can't close fd %d", argv[2], 100);
 }
 return (0);
 }
