@@ -28,37 +28,37 @@ exit(exit_code);
  */
 int main(int argc, char *argv[])
 {
-int file_from, file_to, bytes_read, bytes_written;
+int ffrom, fto, rd, wr;
 char buffer[BUFFER_SIZE];
 if (argc != 3)
 {
 print_error_and_exit("Usage: cp file_from file_to", "", 97);
 }
-file_from = open(argv[1], O_RDONLY);
-if (file_from == -1)
+ffrom = open(argv[1], O_RDONLY);
+if (ffrom == -1)
 {
 print_error_and_exit("Error: Can't read from file %s", argv[1], 98);
 }
-file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, perm);
-if (file_to == -1)
+fto = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, perm);
+if (fto == -1)
 {
 print_error_and_exit("Error: Can't write to %s", argv[2], 99);
 }
-while ((bytes_read = read(file_from, buffer, BUFFER_SIZE)) > 0)
+while ((rd = read(ffrom, buffer, BUFFER_SIZE)) > 0)
 {
-bytes_written = write(file_to, buffer, bytes_read);
-if (bytes_written == -1)
+wr = write(fto, buffer, rd);
+if (wr == -1)
 {
 print_error_and_exit("Error: Can't write to %s", argv[2], 99);
 }
 }
-if (bytes_read == -1)
+if (rd == -1)
 {
 print_error_and_exit("Error: Can't read from file %s", argv[1], 98);
 }
-if (close(file_from) == -1)
+if (close(ffrom) == -1)
 print_error_and_exit("Error: Can't close fd %d", argv[1], 100);
-if (close(file_to) == -1)
+if (close(fto) == -1)
 {
 print_error_and_exit("Error: Can't close fd %d", argv[2], 100);
 }
