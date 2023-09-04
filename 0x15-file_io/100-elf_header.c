@@ -44,20 +44,20 @@ return (98);
 f = open(argv[1], O_RDONLY);
 if (f == -1)
 {
-err_msg("Error: Cannot read file\n");
+err_msg("error reading\n");
 return (98);
 }
 rd = read(f, arr, 64);
 if (rd == -1)
 {
-err_msg("Error: Cannot read file\n");
+err_msg("error reading\n");
 close(f);
 return (98);
 }
 if (arr[0] != 0x7f || arr[1] != 'E' || arr[2] != 'L' ||
 arr[3] != 'F')
 {
-err_msg("Error: Not an ELF file\n");
+err_msg("ELF not found\n");
 close(f);
 return (98);
 }
