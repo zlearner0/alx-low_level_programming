@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 
+#define arrsize 1024
 
 int _putchar(char letter);
 int _strlen(char *str);
