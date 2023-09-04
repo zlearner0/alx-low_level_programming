@@ -5,7 +5,18 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/stat.h>
-
+/**
+ * _strlen - count a string length
+ * @str: pointer to string
+ * Return: text length
+*/
+int _strlen(char *str)
+{
+int len;
+for (len = 0; str[len]; len++)
+;
+return (len);
+}
 /**
  * append_text_to_file - append text
  * @filename: the to be read
