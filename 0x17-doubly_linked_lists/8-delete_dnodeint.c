@@ -14,15 +14,6 @@ dlistint_t *current = (*head);
 
 if (!(*head))
 return (1);
-
-if (index == 0)
-{
-*head = (*head)->next;
-if (*head)
-(*head)->prev = NULL;
-free(current);
-return (1);
-}
 while (current)
 {
 if (count == index)
@@ -46,3 +37,6 @@ count++;
 }
 return (-1);
 }
+
+
+
