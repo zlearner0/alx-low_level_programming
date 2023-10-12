@@ -12,7 +12,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 char key[7], *symb;
 int len = strlen(argv[1]), i, saver;
-symb = "B!Qx%Y3r4GzvU0HqJ^2n8CwKl6O@pXh5iMcFjD9e&amp;b1TaN7W*VtSdRg$Ls+A=EfyZ";
+symb = "A-CHRDw87lNS0E9B2TibgpnMVys5XzvtOGJcYLU+4mjW6fxqZeF3Qa1rPhdKIouk";
 saver = (len ^ 59) & 63;
 key[0] = symb[saver];
 saver = 0;
