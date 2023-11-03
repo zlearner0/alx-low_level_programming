@@ -77,9 +77,6 @@ shash_node_t *stail;
 } shash_table_t;
 
 
-
-
-
 hash_table_t *hash_table_create(unsigned long int size);
 unsigned long int hash_djb2(const unsigned char *str);
 unsigned long int key_index(const unsigned char *key, unsigned long int size);
@@ -91,5 +88,21 @@ void free_hash_node_t(hash_node_t *node);
 char *hash_table_get(const hash_table_t *ht, const char *key);
 void hash_table_print(const hash_table_t *ht);
 void hash_table_delete(hash_table_t *ht);
+
+
+/*advanced task funcions a file 100 */
+shash_table_t *shash_table_create(unsigned long int size);
+int shash_table_set(shash_table_t *ht, const char *key, const char *value);
+
+int a_head(shash_table_t *ht, shash_node_t *new_node, unsigned long int index);
+int a_node(shash_table_t *ht, shash_node_t *new_node, unsigned long int index);
+int a_tail(shash_table_t *ht, shash_node_t *new_node, unsigned long int index);
+void update_shead(shash_table_t *ht);
+void update_stail(shash_table_t *ht);
+
+char *shash_table_get(const shash_table_t *ht, const char *key);
+void shash_table_print(const shash_table_t *ht);
+void shash_table_print_rev(const shash_table_t *ht);
+void shash_table_delete(shash_table_t *ht);
 
 #endif
