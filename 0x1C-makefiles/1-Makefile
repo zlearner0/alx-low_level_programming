@@ -8,3 +8,6 @@ all: $(EXE)
 
 $(EXE): $(SRC)
     $(CC) $(SRC) -o $(EXE) 
+
+clean:
+    rm -f $(EXE)
