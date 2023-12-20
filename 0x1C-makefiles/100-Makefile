@@ -1,22 +1,44 @@
+# Define the compiler to use
 CC = gcc
-SRC = main.c school.c
+
+# Define the source files
+SRC = $(wildcard *.c)
+
+# Define the object files
 OBJ = $(SRC:.c=.o)
+
+# Define the name of the executable
 NAME = school
 
+# Define the program to delete files
+RM = /bin/rm -f
+
+# Define the compiler flags
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Define the rule for the 'all' target
 all: $(NAME)
 
+# Define the rule for building the executable
 $(NAME): $(OBJ)
-	$(CC) -o $@ $(OBJ)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
 
-$(OBJ): $(SRC) m.h
-	$(CC) -c $(filter %.c,$^) -o $@ $(CFLAGS)
+# Define the rule for generating the object files
+%.o: %.c m.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
+# Define the rule for cleaning the files
 clean:
-	$$(RM) *~ $(NAME)
+	$(RM) *~ *#
 
+# Define the rule for deleting the object files
 oclean:
-	$$(RM) $(OBJ)
+	$(RM) $(OBJ)
 
+# Define the rule for deleting all the files
 fclean: clean oclean
+	$(RM) $(NAME)
 
+# Define the rule for recompiling the files
 re: fclean all
+
