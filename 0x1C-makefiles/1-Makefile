@@ -7,7 +7,4 @@ EXE = school
 all: $(EXE)
 
 $(EXE): $(SRC)
-    $(CC) -o $(EXE) $(SRC)
-
-clean:
-    rm -f $(EXE)
+    $(CC) $(SRC) -o $(EXE) 
